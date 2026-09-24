@@ -6,9 +6,59 @@ document.querySelector('.directory').insertAdjacentHTML('beforebegin','<section 
 
 (()=>{const d=document.querySelector('.directory');for(let i=0;i<2;i++){if(d.previousElementSibling?.classList.contains('box'))d.previousElementSibling.remove()}d.insertAdjacentHTML('beforebegin','<section class="box"><p class="eyebrow">Helpful resources</p><h2>How to find and register with an AP testing centre</h2><h3>Find a centre</h3><ol><li>Open the <a href="https://apcourseaudit.inflexion.org/ledger/?excmpid=VT-00090" target="_blank" rel="noreferrer">College Board AP Course Ledger</a>.</li><li>Choose your country, leave the subject field blank, select a state/province if relevant, and choose the current year.</li><li>Start without a city. Once you see which cities have centres, use the city field to refine your search.</li><li>If there are no results, widen the search. Email or call all suitable centres — many will not accept outside students.</li></ol><h3>Register for your exam</h3><ol><li>Once a centre accepts you, follow its own registration and payment process.</li><li>Ask for an <strong>Exam Only</strong> join code. This is different from your CGA AP Classroom code.</li><li>Go to <a href="https://apstudents.collegeboard.org/register-for-ap-exams" target="_blank" rel="noreferrer">My AP</a>, sign in with a personal Student account and open AP Classroom.</li><li>Select <strong>Join a course or exam</strong> and enter the unique code from your exam centre.</li><li>After registering, notify CGA and stay in touch with the centre about its deadline, exam-day instructions and computer requirements.</li></ol><p>Need help? Contact <strong>Nakeeza Wilson, AP Coordinator</strong>, at <a href="mailto:n.wilson@cga.school">n.wilson@cga.school</a>, or the CGA exams team at <a href="mailto:exams@cga.school">exams@cga.school</a>. Need exam accommodations? Please contact Ms. Wagner at <a href="mailto:m.wagner@cga.school">m.wagner@cga.school</a>.</p></section><section class="box note"><p class="eyebrow">AP Exam Schedule</p><h2>Follow the College Board schedule</h2><p>The AP Exam Schedule is set by the <strong>College Board</strong>, not by your school or exam centre. Please make sure you can comply with the published exam date and time.</p><p>If the scheduled date or time does not work for you, speak with your testing centre as soon as possible. Ask whether they can offer a <strong>late testing date</strong>. This is decided by the centre and is not guaranteed.</p><p><a class="button" href="https://apcentral.collegeboard.org/exam-administration-ordering-scores/exam-dates" target="_blank" rel="noreferrer">View the AP Exam Schedule ↗</a></p></section>')})();
 
+// Provider-specific registration guidance and additions from the school list.
+const providerRegistration = 'Register and pay through the provider portal. Use the same legal name, date of birth and email address as in your College Board/My AP account. No Exam Only join code is required. Check My AP after the provider submits registrations to confirm your exam appears.';
+for (const centre of window.AP_CENTRES) {
+  if (centre.country === 'Hong Kong' && centre.name === 'HK Exam and assessment authority') {
+    centre.comment = providerRegistration;
+  } else if (centre.name.toLowerCase().includes('prometric')) {
+    centre.comment = providerRegistration;
+  } else if (centre.name === "King's School" && centre.country === 'Australia') {
+    centre.form = 'https://events.humanitix.com/2027-advanced-placement-ap-exams-at-the-king-s-school';
+  } else if (centre.name === 'Cambridge Christian School' && centre.country === 'United States') {
+    centre.comment = 'The school has a homeschool program and lists an AP Exam fee. Confirm external-candidate eligibility and 2027 registration directly.';
+  }
+}
+window.AP_CENTRES.push(
+  {country:'United States',city:'Houston, TX',name:'Houston Independent School District',website:'https://www.houstonisd.org/schools-academics/academics/college-career-military-readiness-ccmr/college-ready-programming/advanced-placement-ap/ap-testing',email:'',phone:'',form:'',comment:'Potential route for homeschool, virtual and independent-study students. School approval is required. Confirm district eligibility and the November 2, 2026 deadline.'},
+  {country:'United States',city:'Pearland, TX',name:'Pearland High School',website:'https://phs.pearlandisd.org/academics-phs/academics/advanced-placement',email:'rayburnd@pearlandisd.org',phone:'+1 281-997-7445',form:'',comment:'Contact AP Coordinator Damon Rayburn about the non-enrolled student exam request. Confirm district eligibility and registration requirements.'},
+  {country:'United States',city:'Humble, TX',name:'Humble Independent School District',website:'https://www.humbleisd.net/o/humbleisd/page/college-readiness',email:'HumbleISD_Connect@humbleisd.net',phone:'+1 281-641-1000',form:'',comment:'Contact the district about AP Exams for homeschool students. Confirm eligibility and registration requirements.'},
+  {country:'United States',city:'Pembroke Pines / Aventura, FL',name:'Broward County Public Schools',website:'https://www.browardschools.com/bcps-departments/academics/magnet-programs/home-school-education',email:'home.education@browardschools.com',phone:'',form:'',comment:'For eligible home-education students not enrolled through FLVS. Email an AP testing request with the student’s details and requested exams. Confirm district eligibility and the October 25, 2026 deadline.'},
+  {country:'United States',city:'Boca Raton / West Palm Beach / Wellington, FL',name:'Palm Beach County School District',website:'https://www.palmbeachschools.org/studentsparents/home-education/testing-information',email:'homeed@palmbeachschools.org',phone:'+1 561-434-8052',form:'',comment:'Home-education students: contact the Home Education office or your zoned school’s testing coordinator. Confirm eligibility and fees.'},
+  {country:'United States',city:'Temple City, CA',name:'Foothill Preparatory School',website:'https://www.fpsch.org/resources/ap-exams/',email:'',phone:'+1 626-282-9936',form:'',comment:'Accepts AP Exam students from surrounding communities. Check the school website for 2027 registration details when available.'},
+  {country:'United States',city:'Irvine, CA',name:'Northwood High School',website:'https://northwoodhigh.iusd.org/academics/advanced-placement-ap/advanced-placement-ap-exam-information',email:'',phone:'',form:'',comment:'Accepts non-IUSD students who are self-studying. Confirm 2027 dates, fees and eligibility before payment.'},
+  {country:'United States',city:'Raleigh, NC',name:'Ravenscroft School',website:'https://www.ravenscroft.org/',email:'',phone:'',form:'',comment:'Reported as accepting external AP Exam candidates. Confirm 2027 availability and registration directly with the school.'},
+  {country:'United States',city:'Miami, FL',name:'Booker T. Washington Senior High School',website:'',email:'speabody@dadeschools.net',phone:'+1 305-324-8900',form:'',comment:'Contact Test Chair Sharlee Peabody. External-candidate availability has not yet been confirmed.'}
+);
+
+// The page's inline script renders the final list after this file has loaded.
+document.querySelector('#nav')?.replaceChildren();
+document.querySelector('#list')?.replaceChildren();
+
+// Correct the general guidance for provider registrations and newly added leads.
+for (const item of document.querySelectorAll('li')) {
+  if (item.textContent.includes('Ask for an Exam Only join code.')) {
+    item.innerHTML = 'Most centres provide an <strong>Exam Only</strong> join code. HKEAA and Prometric use a different process: register through their portal, then check My AP to confirm your exam appears.';
+  } else if (item.textContent.includes('Select Join a course or exam and enter the unique code')) {
+    item.innerHTML = 'If your centre provides a code, select <strong>Join a course or exam</strong> and enter it. For HKEAA or Prometric, wait for your exam to appear in My AP after the provider submits registrations.';
+  } else if (item.textContent.includes('You are registered only after you have paid and joined the exam section')) {
+    item.textContent = 'Follow the centre’s registration and payment process, then confirm that your exam appears in My AP.';
+  } else if (item.textContent.includes('The list below shows schools where CGA students have previously registered')) {
+    item.textContent = 'The list below includes testing centres and possible registration routes. Confirm eligibility and availability directly with each provider.';
+  }
+}
+for (const paragraph of document.querySelectorAll('.reading p')) {
+  if (paragraph.textContent.startsWith('We put this list together to make your first steps easier.')) {
+    paragraph.textContent = 'We put this list together to make your first steps easier. It includes centres used by CGA students and additional possible options. Confirm eligibility, availability and current details directly with each provider.';
+  } else if (paragraph.textContent.startsWith('These are centres our students have used before,')) {
+    paragraph.textContent = 'This list is a starting point. There may be other schools worldwide that accept private candidates. If you do not see your country or city, use the College Board Course Ledger and contact nearby schools.';
+  }
+}
+const directoryHeading = document.querySelector('.directory h2');
+if (directoryHeading) directoryHeading.textContent = 'AP testing centres and registration options';
+const directoryIntro = document.querySelector('.directory .muted');
+if (directoryIntro) directoryIntro.textContent = 'Browse by country. Some options still require eligibility or availability confirmation.';
+
 // A short, on-page summary adapted from the CGA score-information handout.
 (()=>{const d=document.querySelector('.directory');d.insertAdjacentHTML('beforebegin','<section class="box score-note"><p class="eyebrow">After your AP exam</p><h2>Every AP exam is worth taking seriously</h2><div class="score-grid"><div><h3>Learning carries forward</h3><p>Students who receive a 1 or 2 often earn a higher score on a later AP exam and can still perform strongly in introductory college courses.</p></div><div><h3>Your scores are your choice</h3><p>You do not have to use the free score send before you see your results. Later, you can choose which individual AP scores to share.</p></div><div><h3>It still shows ambition</h3><p>Taking an AP exam demonstrates that you are prepared to take on college-level work — a meaningful signal to colleges and universities.</p></div></div></section>');document.head.insertAdjacentHTML('beforeend','<style>.score-note{border-top:4px solid #F27800}.score-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}.score-grid>div{background:#fff7ed;padding:16px;border-radius:10px}.score-grid h3{font-size:16px;margin:0 0 7px}.score-grid p{margin:0}@media(max-width:700px){.score-grid{grid-template-columns:1fr}}</style>')})();
-
-
-
 (()=>{const d=document.querySelector('.directory');d.insertAdjacentHTML('beforebegin','<section class="box" id="contact-template"><p class="eyebrow">Contact template</p><h2>A starting point for your email</h2><p>Personalise the brackets, then send this directly to the school or AP coordinator.</p><details><summary><strong>Open and copy the email template</strong></summary><pre>Subject: Request to Register for AP Exams – [Your Full Name]\n\nDear [School/Exam Coordinator’s Name],\n\nMy name is [Full Name], and I am writing to inquire about registering as a private candidate for the upcoming AP Exams in May 2026 at your school.\n\nBelow are my details:\n• Full Name (as in passport): [Type here]\n• Email Address: [Type here]\n• Phone Number (for urgent contact): [Type here]\n• Date of Birth: [Type here]\n• AP Exams I intend to take: [List subjects]\n\nI would be very grateful if you could confirm:\n1. Whether your school accepts private candidates for AP exams.\n2. The registration procedure, deadlines and fees.\n3. Any additional requirements I should be aware of.\n\nThank you in advance for your guidance. I look forward to your reply.\n\nKind regards,\n[Your Full Name]</pre></details></section>')})();
