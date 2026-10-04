@@ -12,9 +12,41 @@ for (const centre of window.AP_CENTRES) {
   if (centre.country === 'Hong Kong' && centre.name === 'HK Exam and assessment authority') {
     centre.comment = providerRegistration;
   } else if (centre.name.toLowerCase().includes('prometric')) {
-    centre.comment = providerRegistration;
+    centre.comment = 'Follow the provider’s current instructions. Prometric Singapore, Türkiye and UK require both a subject-specific join code in My AP and separate registration and payment; complete every step.';
+    if (centre.country === 'Singapore') centre.website = 'https://www.prometric.com/exams/cbapsg/';
+    if (centre.country === 'Turkey') centre.website = 'https://www.prometric.com/exams/cbaptr';
+    if (centre.country === 'United Kingdom') centre.website = 'https://www.prometric.com/exams/cbapuk';
   } else if (centre.name === "King's School" && centre.country === 'Australia') {
     centre.form = 'https://events.humanitix.com/2027-advanced-placement-ap-exams-at-the-king-s-school';
+    centre.comment = 'North Parramatta. Accepts external students for selected May 2027 AP exams; check available subjects and ticket availability on the registration page.';
+  } else if (centre.name === 'Johnathan Academy') {
+    centre.website = 'https://www.johnathana.ca/academics/ap';
+    centre.comment = 'Vancouver AP exam centre accepting external students for May 2027. Registration and payment are available from the school website.';
+  } else if (centre.name === 'Columbia Academy (Vancouver)') {
+    centre.website = 'https://columbiaacademy.ca/senior-school-8-12/ap-exam/';
+    centre.email = 'admissions@columbiaacademy.ca';
+    centre.comment = 'Welcomes eligible external students for selected May 2027 AP exams when seats are available.';
+  } else if (centre.name === 'Bronte College') {
+    centre.website = 'https://brontecollege.ca/advanced-placement-program/';
+    centre.email = 'ap@brontecollege.ca';
+    centre.comment = 'Mississauga AP testing site explicitly invites external students. Email its AP coordinator for 2027 subjects, seats and registration instructions.';
+  } else if (centre.name === 'American School of The Hague') {
+    centre.city = 'The Hague';
+    centre.website = 'https://www.ash.nl/about/testing-center';
+    centre.comment = 'Accepts independent and external AP candidates for May 2027. Submit its interest form and obtain confirmation by the end of October 2026.';
+  } else if (centre.name === 'Korean-American Educational Commission') {
+    centre.website = 'https://testing.fulbright.or.kr/en/exams/ap/';
+    centre.comment = 'KAEC registers independent candidates for 2027 AP exams at Seoul and Jeju test centres. Check subjects, dates and registration instructions.';
+  } else if (centre.name === 'Christ’s College, Canterbury') {
+    centre.website = 'https://christscollege.com/about-us/academic-programme/ap-testing';
+    centre.comment = 'Christchurch 2027 AP test centre. Applicants must be enrolled in a New Zealand secondary school or be New Zealand citizens. Check offered subjects and complete the school registration form.';
+  } else if (centre.name === 'Wentworth Computer Science College') {
+    centre.comment = 'Earlier AP registration information is linked here, but May 2027 external-candidate availability has not been independently confirmed. Contact the school first.';
+  } else if (centre.name === 'The Primacy Collegiate Academy') {
+    centre.website = 'https://primacy.org.tw/ap-program/ap-program/';
+    centre.comment = 'Taipei school lists May 2027 AP exams and an AP coordinator. Its handbook allows some non-Primacy candidates subject to space; confirm eligibility and deadlines directly.';
+  } else if (centre.name === 'APU International School') {
+    centre.comment = 'School AP route has not been confirmed for external candidates in 2027. IIG Vietnam is the College Board-authorized public registration route in Ho Chi Minh City.';
   } else if (centre.name === 'Mountainview International Christian School' && centre.country === 'Indonesia') {
     centre.website = 'https://www.mtview.id/en/academics/secondary.html';
   } else if (centre.name === 'Cambridge Christian School' && centre.country === 'United States') {
@@ -73,6 +105,30 @@ window.AP_CENTRES.push(
   {country:'Saudi Arabia',city:'Jeddah',name:'Dar Al Fikr Schools',website:'https://fikr.edu.sa/main/international-exam/',email:'info@fikr.edu.sa',phone:'',form:'https://shop.fikr.edu.sa/en',comment:'The school offers 2027 AP exam registration for students not enrolled at Dar Al Fikr, subject to approval and seat availability. Separate boys’ and girls’ registration options; verify the exam and deadline before payment.'}
 );
 
+window.AP_CENTRES.push(
+  {country:'United States',city:'Cupertino, CA (San Francisco Bay Area)',name:'Legend College Preparatory',website:'https://legendcp.com/apexamsfaq/',email:'ap@legendcp.com',phone:'+1 408-865-0366',form:'https://legendcp.wufoo.com/forms/ap-exam-registration-2027-external-students/',comment:'Accepts external candidates for 2027 AP exams. Testing is scheduled at De Anza College, Cupertino; regular registration deadline November 1, 2026. Check available subjects and seats.'},
+  {country:'Canada',city:'Edmonton, Alberta',name:'Strathcona High School',website:'https://strathcona.epsb.ca/academics/advancedplacement/',email:'jaclyn.fedorus@epsb.ca',phone:'',form:'',comment:'School says it offers AP exams to external students in grades 10–12 for many subjects. Its posted procedures still refer to May 2026; ask the AP coordinator to confirm 2027 registration.'},
+  {country:'South Korea',city:'Jeju',name:'KAEC AP Test Center — Jeju',website:'https://testing.fulbright.or.kr/en/exams/ap/',email:'',phone:'',form:'',comment:'Official KAEC 2027 AP test centre for external candidates on Jeju Island. Check registration dates and available exams with KAEC.'},
+  {country:'India',city:'Gurugram, Haryana',name:'Excelsior American School — AP test centre',website:'https://international.collegeboard.org/students/ap/taking-ap-india',email:'',phone:'',form:'',comment:'Listed by College Board as an authorized public AP test centre for 2027. Follow the centre-specific registration instructions linked from the College Board page.'}
+);
+
+window.AP_CENTRES.push(
+  {country:'Vietnam',city:'Ho Chi Minh City',name:'IIG Vietnam — AP authorized test centre',website:'https://iigvietnam.com/ap-2/',email:'info@iigvietnam.edu.vn',phone:'1900 636 929',form:'https://online.iigvietnam.com/',comment:'College Board lists IIG as an authorized AP test provider. Eligible candidates register and pay through IIG, then complete its My AP steps; confirm 2027 subjects and venue.'}
+);
+
+window.AP_CENTRES.push(
+  {country:'Saudi Arabia',city:'Riyadh',name:'Al Sahafa International School',website:'https://alsahafaschool.edu.sa/academics-2/',email:'zainabdeeb@alsahafaschool.edu.sa',phone:'',form:'https://forms.cloud.microsoft/r/DpdUFn1mih',comment:'School says AP registration is open to boys and girls from other schools as well as its own students. Confirm May 2027 subjects, deadlines and seat availability with the counselor.'}
+);
+
+window.AP_CENTRES.push(
+  {country:'Canada',city:'Toronto, Ontario',name:'Bond Academy and International College',website:'https://bondacademy.ca/2026/09/03/2027-ap-exam-early-bird-registration-opens-to-november-6-2026-15-most-popular-exams-available-bond/',email:'ap@web.bondacademy.ca',phone:'+1 416-266-8878',form:'',comment:'Accepts students from outside Bond for 15 listed May 2027 AP exams. Early registration ends November 6, 2026; use the form linked on its official page.'},
+  {country:'Canada',city:'Vancouver, British Columbia',name:'Pattison High School',website:'https://www.pattisonhighschool.ca/advanced-placement-ap-exam/',email:'ap@pattisonhighschool.ca',phone:'+1 604-608-8788',form:'',comment:'2027 AP centre open to internal and external students regardless of school enrolment. Register and pay through the official page; early deadline November 6, 2026.'}
+);
+
+window.AP_CENTRES.push(
+  {country:'United States',city:'Austin, TX',name:'Austin Independent School District — zoned campus',website:'https://www.austinisd.org/advanced-academics/ap',email:'cody.pruitt@austinisd.org',phone:'+1 512-414-1700',form:'',comment:'May 2027 AP exams are available to homeschooled students who live within Austin ISD and meet the district’s eligibility rules. Testing is at the student’s assigned campus, only for exams offered there. Other external students must confirm eligibility.'}
+);
+
 // The page's inline script renders the final list after this file has loaded.
 document.querySelector('#nav')?.replaceChildren();
 document.querySelector('#list')?.replaceChildren();
@@ -80,11 +136,13 @@ document.querySelector('#list')?.replaceChildren();
 // Correct the general guidance for provider registrations and newly added leads.
 for (const item of document.querySelectorAll('li')) {
   if (item.textContent.includes('Ask for an Exam Only join code.')) {
-    item.innerHTML = 'Most centres provide an <strong>Exam Only</strong> join code. HKEAA and Prometric use a different process: register through their portal, then check My AP to confirm your exam appears.';
+    item.innerHTML = 'Follow the centre’s instructions for a join code and payment. Prometric Singapore, Türkiye and UK publish subject-specific join codes; HKEAA follows its own portal process.';
   } else if (item.textContent.includes('Select Join a course or exam and enter the unique code')) {
-    item.innerHTML = 'If your centre provides a code, select <strong>Join a course or exam</strong> and enter it. For HKEAA or Prometric, wait for your exam to appear in My AP after the provider submits registrations.';
+    item.innerHTML = 'If your centre requires a code, select <strong>Join a course or exam</strong> in My AP and enter it. Complete any separate provider registration and payment as well.';
   } else if (item.textContent.includes('You are registered only after you have paid and joined the exam section')) {
     item.textContent = 'Follow the centre’s registration and payment process, then confirm that your exam appears in My AP.';
+  } else if (item.textContent.includes('Tell schools that you are home-schooled rather than studying at an online school')) {
+    item.textContent = 'Describe your actual school status accurately when asking a centre whether it accepts external or virtual-school candidates.';
   } else if (item.textContent.includes('The list below shows schools where CGA students have previously registered')) {
     item.textContent = 'The list below includes testing centres and possible registration routes. Confirm eligibility and availability directly with each provider.';
   }
