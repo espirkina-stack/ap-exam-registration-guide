@@ -41,7 +41,11 @@ for (const centre of window.AP_CENTRES) {
     centre.website = 'https://christscollege.com/about-us/academic-programme/ap-testing';
     centre.comment = 'Christchurch 2027 AP test centre. Applicants must be enrolled in a New Zealand secondary school or be New Zealand citizens. Check offered subjects and complete the school registration form.';
   } else if (centre.name === 'Wentworth Computer Science College') {
-    centre.comment = 'Earlier AP registration information is linked here, but May 2027 external-candidate availability has not been independently confirmed. Contact the school first.';
+    centre.city = 'Newmarket, Auckland';
+    centre.website = 'https://drive.google.com/file/d/1yS3ZkVG0csuEVdJKEA7djgv--o5USV-U/view?usp=sharing';
+    centre.form = 'https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=81fDNhEZREyyksK1cT_Eb3ShSCtxK2dAtohgEWfNhXdURVRWNk03SUZTUVkzV0syNVgzQ1oyM0ZZRi4u';
+    centre.email = 'ktanaka@wentworth.school.nz';
+    centre.comment = '2027 external AP candidates: complete the registration form, then have both parent and student sign the linked information/terms PDF. Email the signed PDF and a passport copy to ktanaka@wentworth.school.nz by November 6, 2026. The school lists NZ$600 per subject; confirm payment instructions and available exams directly.';
   } else if (centre.name === 'The Primacy Collegiate Academy') {
     centre.website = 'https://primacy.org.tw/ap-program/ap-program/';
     centre.comment = 'Taipei school lists May 2027 AP exams and an AP coordinator. Its handbook allows some non-Primacy candidates subject to space; confirm eligibility and deadlines directly.';
