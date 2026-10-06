@@ -129,6 +129,27 @@ window.AP_CENTRES.push(
   {country:'United States',city:'Austin, TX',name:'Austin Independent School District — zoned campus',website:'https://www.austinisd.org/advanced-academics/ap',email:'cody.pruitt@austinisd.org',phone:'+1 512-414-1700',form:'',comment:'May 2027 AP exams are available to homeschooled students who live within Austin ISD and meet the district’s eligibility rules. Testing is at the student’s assigned campus, only for exams offered there. Other external students must confirm eligibility.'}
 );
 
+// Refresh the New York / New Jersey options without duplicating existing cards.
+for (const centre of window.AP_CENTRES) {
+  if (centre.name === "St. Anthony's School") {
+    centre.city = 'South Huntington, Long Island, NY';
+    centre.website = 'https://www.stanthonyshs.org/ap-exam-registration/';
+    centre.comment = 'The school publishes a 2027 AP registration form. Email the contact to confirm whether external candidates and your subjects are accepted before submitting it.';
+  } else if (centre.name === 'Eleanor Roosevelt High School') {
+    centre.website = 'https://www.erhsnyc.org/apps/pages/?pREC_ID=1103869&type=d&uREC_ID=572429';
+    centre.comment = 'Contact the school about 2027 AP exam availability for external candidates. External registration is not confirmed on the school website.';
+  } else if (centre.name === 'Belleville High School') {
+    centre.website = 'https://hs.bellevilleschools.org/';
+    centre.email = 'maria.calhoun@bellevilleschools.org';
+    centre.comment = 'Contact the school principal to ask whether Belleville can register external AP candidates for 2027; this is not confirmed on the school website.';
+  }
+}
+window.AP_CENTRES.push({
+  country:'United States',city:'Jersey City, NJ (near New York)',name:'Dwight Global AP Exams — Franklin School',
+  website:'https://dwightglobal.jumbula.com/',email:'',phone:'',form:'',
+  comment:'May 2027 AP exams take place at Franklin School, 80 Town Square Pl, Jersey City. External students must obtain prior approval from Dwight Global’s AP Coordinator before registering or paying. Regular registration deadline: October 16, 2026; check subjects and availability on the official page.'
+});
+
 // The page's inline script renders the final list after this file has loaded.
 document.querySelector('#nav')?.replaceChildren();
 document.querySelector('#list')?.replaceChildren();
