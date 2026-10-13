@@ -158,6 +158,52 @@ window.AP_CENTRES.push({
 document.querySelector('#nav')?.replaceChildren();
 document.querySelector('#list')?.replaceChildren();
 
+// CGA / C&T Education partner exam sites from the May 2027 guide.
+// The individual host schools and their addresses are supplied after registration.
+window.AP_CENTRES.push(
+  {country:'United States',city:'Tampa, FL',name:'C&T Education AP exam site — Tampa',partnerSite:true,fee:'$400 per exam',deadline:'November 12, 2026',website:'',email:'cherry@cteducationusa.com',phone:'',form:'https://docs.google.com/forms/d/e/1FAIpQLSeM-AxsougDafecjnMY0figoGNFP9TLMv6f5AWwfqsFd9zfLQ/viewform',comment:'CGA partner site. Complete the form, then email Cherry with your name, subjects and preferred site (CC exams@cga.school). Pay C&T directly. The host school address is provided after registration; confirm your subjects before paying.'},
+  {country:'United States',city:'Boston, MA',name:'C&T Education AP exam site — Boston',partnerSite:true,fee:'$350 per exam',deadline:'November 12, 2026',website:'',email:'cherry@cteducationusa.com',phone:'',form:'https://docs.google.com/forms/d/e/1FAIpQLSeM-AxsougDafecjnMY0figoGNFP9TLMv6f5AWwfqsFd9zfLQ/viewform',comment:'CGA partner site. Complete the form, then email Cherry with your name, subjects and preferred site (CC exams@cga.school). Pay C&T directly. The host school address is provided after registration; confirm your subjects before paying.'},
+  {country:'United States',city:'Newtown Square, PA',name:'C&T Education AP exam site — Newtown Square',partnerSite:true,fee:'$350 per exam',deadline:'November 12, 2026',website:'',email:'cherry@cteducationusa.com',phone:'',form:'https://docs.google.com/forms/d/e/1FAIpQLSeM-AxsougDafecjnMY0figoGNFP9TLMv6f5AWwfqsFd9zfLQ/viewform',comment:'CGA partner site. Complete the form, then email Cherry with your name, subjects and preferred site (CC exams@cga.school). Pay C&T directly. The host school address is provided after registration; confirm your subjects before paying.'},
+  {country:'United States',city:'Birmingham, AL',name:'C&T Education AP exam site — Birmingham',partnerSite:true,fee:'$350 per exam',deadline:'November 12, 2026',website:'',email:'cherry@cteducationusa.com',phone:'',form:'https://docs.google.com/forms/d/e/1FAIpQLSeM-AxsougDafecjnMY0figoGNFP9TLMv6f5AWwfqsFd9zfLQ/viewform',comment:'CGA partner site. Complete the form, then email Cherry with your name, subjects and preferred site (CC exams@cga.school). Pay C&T directly. The host school address is provided after registration; confirm your subjects before paying.'},
+  {country:'United States',city:'Lakewood, NJ',name:'C&T Education AP exam site — Lakewood',partnerSite:true,fee:'$650 per exam',deadline:'November 13, 2026',website:'',email:'cherry@cteducationusa.com',phone:'',form:'https://docs.google.com/forms/d/e/1FAIpQLSeM-AxsougDafecjnMY0figoGNFP9TLMv6f5AWwfqsFd9zfLQ/viewform',comment:'CGA partner site; all AP subjects listed. Complete the form, then email Cherry (CC exams@cga.school). Late registration through March 12, 2027 and late testing May 17–21 each cost an extra $40. Pay C&T directly; host school address follows registration.'},
+  {country:'United States',city:'Arcadia, CA',name:'C&T Education AP exam site — Arcadia',partnerSite:true,fee:'$550 per exam',deadline:'March 12, 2027',website:'',email:'cherry@cteducationusa.com',phone:'',form:'https://docs.google.com/forms/d/e/1FAIpQLSeM-AxsougDafecjnMY0figoGNFP9TLMv6f5AWwfqsFd9zfLQ/viewform',comment:'CGA partner site. Complete the form, then email Cherry with your name, subjects and preferred site (CC exams@cga.school). Pay C&T directly. The host school address is provided after registration; confirm your subjects before paying.'}
+);
+
+// Reconcile additions marked FALSE in column K of the AP School New Additions sheet.
+// Existing schools are updated in place so the directory does not show duplicates.
+for (const centre of window.AP_CENTRES) {
+  if (centre.name === 'Cambridge Christian School' && centre.country === 'United States') {
+    centre.city = 'Tampa, FL';
+    centre.website = 'https://ccslancers.com/about/our-story/';
+    centre.email = 'mshiver@ccslancers.com';
+    centre.phone = '+1 813-872-6743';
+    centre.form = 'https://payit.nelnet.net/form/O0J9VDM7';
+    centre.comment = 'Email the AP coordinator or call +1 813-872-6743. The sheet lists a 2027 registration form open until November 2, 2026; confirm external-candidate eligibility before payment.';
+  } else if (centre.name.toLowerCase() === 'toronto stem school') {
+    centre.website = 'https://www.torontostemschool.com/store';
+    centre.form = 'https://www.torontostemschool.com/store';
+    centre.comment = 'Register for an AP exam directly through the online store, not for a virtual course. Check the current deadline and any late fee before paying.';
+  } else if (centre.name === 'Foothill Preparatory School' && centre.city.includes('Temple City')) {
+    centre.website = 'https://www.fpsch.org/resources/ap-exams/';
+    centre.phone = '+1 626-766-8331';
+    centre.comment = 'Accepts AP exam students from surrounding communities and has started registering CGA students. Call +1 626-766-8331 to arrange registration and confirm subjects and availability.';
+  }
+}
+window.AP_CENTRES.push(
+  {country:'Canada',city:'Alberta',name:'Edison School',website:'https://edisonschool.ca/',email:'office@edisonschool.ca',phone:'+1 403-938-7670',form:'',comment:'Email or call to confirm external AP exam registration, subjects and 2027 deadlines.'},
+  {country:'United States',city:'Henderson, NV',name:'Coronado High School',website:'https://www.1001coronado.net/',email:'campbar@nv.ccsd.net',phone:'',form:'',comment:'Email the AP coordinator to confirm eligibility for external candidates, subjects and registration dates.'},
+  {country:'Philippines',city:'Alabang, Muntinlupa City',name:'MIT International School',website:'https://mitis.edu.ph/student-life/take-ap-and-psat/',email:'apprograms@mitis.edu.ph',phone:'+63 2 8809 1616',form:'',comment:'Email AP Coordinator Ana Yanez about exam registration and available subjects.'},
+  {country:'United States',city:'Los Alamos, NM',name:'Los Alamos High School',website:'https://tfa.laschools.net/learning-resources/ap',email:'c.goettee@laschools.net',phone:'+1 505-663-2204',form:'',comment:'Email AP Coordinator Connie Goettee to confirm external-candidate eligibility and 2027 registration.'},
+  {country:'United States',city:'Bellevue, WA',name:'Bellevue High School',website:'https://www.bsd405.org/academics/college-credit-options/advanced-placement/how-to-register#fs-panel-124013',email:'APtesting@bsd405.org',phone:'',form:'',comment:'2027 registration instructions are on the district site. Students must live within the school district and provide proof of residency; confirm other eligibility requirements before registering.'},
+  {country:'Mexico',city:'Guadalajara',name:'American School Foundation of Guadalajara',website:'https://www.asfg.edu.mx/',email:'john.opiela@asfg.edu.mx',phone:'',form:'',comment:'Email the exam centre to confirm external-candidate eligibility, subjects and 2027 registration.'},
+  {country:'Spain',city:'Camarma de Esteruelas, Madrid',name:'Evangelical Christian Academy',website:'https://ecaspain.com/school-life/guidance-counseling/testing/',email:'guidance@ecaspain.com',phone:'+34 918 865 003',form:'',comment:'Accepts private candidates for exams the school already offers. Contact the guidance office about subjects and space. The sheet lists registration October 1–March 15, with a $40 late fee after November 15; verify current terms.'},
+  {country:'Colombia',city:'Bogotá',name:'Colegio Nueva Granada',website:'https://www.cng.edu/academics/high-school/advanced-placement',email:'gabriela.lozada@cng.edu',phone:'',form:'',comment:'Email the exam centre to confirm whether external AP candidates are accepted in 2027.'},
+  {country:'United States',city:'Mesa, AZ',name:'Mountain View High School',website:'https://mtnview.mpsaz.org/o/mtnview/page/advanced-placement',email:'mndelillo@mpsaz.org',phone:'',form:'',comment:'Contact Michelle DeLillo to confirm external-candidate eligibility and 2027 registration.'},
+  {country:'United States',city:'Scottsdale, AZ',name:'BASIS Scottsdale',website:'https://enrollbasis.com/scottsdale/',email:'kasey.kingsley@basised.com',phone:'',form:'',comment:'Contact Kasey Kingsley about external-candidate registration and available subjects. The sheet also mentions AP Business with Personal Finance; confirm availability.'},
+  {country:'Bolivia',city:'Santa Cruz de la Sierra',name:'Santa Cruz Christian Learning Center',website:'https://scclc-online.org/wp/en/',email:'rebecaamstutz@scclc.org',phone:'',form:'',comment:'Email the exam centre to confirm external-candidate eligibility and 2027 registration.'},
+  {country:'United States',city:'Kennesaw, GA',name:'Kennesaw Mountain High School Magnet',website:'https://kmhsmagnet.com/contact-html/',email:'Angela.Wood@cobbk12.org',phone:'',form:'',comment:'Contact Magnet Coordinator Angela Wood to confirm external-candidate eligibility and 2027 registration.'}
+);
+
 // Correct the general guidance for provider registrations and newly added leads.
 for (const item of document.querySelectorAll('li')) {
   if (item.textContent.includes('Ask for an Exam Only join code.')) {
