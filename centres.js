@@ -18,7 +18,7 @@ for (const centre of window.AP_CENTRES) {
     if (centre.country === 'United Kingdom') centre.website = 'https://www.prometric.com/exams/cbapuk';
   } else if (centre.name === "King's School" && centre.country === 'Australia') {
     centre.form = 'https://events.humanitix.com/2027-advanced-placement-ap-exams-at-the-king-s-school';
-    centre.comment = 'North Parramatta. Accepts external students for selected May 2027 AP exams; check available subjects and ticket availability on the registration page.';
+    centre.comment = 'North Parramatta. External candidates can book selected May 2027 AP exams, not the full range. Tickets close February 7, 2027; AUD 650 per exam plus applicable booking surcharges. Check the offered subjects before buying.';
   } else if (centre.name === 'Johnathan Academy') {
     centre.website = 'https://www.johnathana.ca/academics/ap';
     centre.comment = 'Vancouver AP exam centre accepting external students for May 2027. Registration and payment are available from the school website.';
@@ -39,7 +39,8 @@ for (const centre of window.AP_CENTRES) {
     centre.comment = 'KAEC registers independent candidates for 2027 AP exams at Seoul and Jeju test centres. Check subjects, dates and registration instructions.';
   } else if (centre.name === 'Christ’s College, Canterbury') {
     centre.website = 'https://christscollege.com/about-us/academic-programme/ap-testing';
-    centre.comment = 'Christchurch 2027 AP test centre. Applicants must be enrolled in a New Zealand secondary school or be New Zealand citizens. Check offered subjects and complete the school registration form.';
+    centre.form = 'https://docs.google.com/forms/d/e/1FAIpQLSfkumtoKjKwyXHf9jTBhdcoLKzk4oGg_UcHy6aiASq9cEVSaw/viewform';
+    centre.comment = 'Christchurch. Applicants must attend a New Zealand secondary school or be New Zealand citizens. Complete the school form; staff then send the College Board registration link. NZD 430 per exam by November 14, 2026, or NZD 495 after that until March 1, 2027.';
   } else if (centre.name === 'Wentworth Computer Science College') {
     centre.city = 'Newmarket, Auckland';
     centre.website = 'https://drive.google.com/file/d/1yS3ZkVG0csuEVdJKEA7djgv--o5USV-U/view?usp=sharing';
